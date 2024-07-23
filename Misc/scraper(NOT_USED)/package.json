@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "puppeteer": "^21.0.2"
+  },
+  "name": "company-sentiment-ai",
+  "description": "This is a personal project that (may periodically) scrape and parse data about a certain company from a certain website \r like Google News and then uses an AI (NLP) or classification model to determine the overall sentiment/portrayal of the \r company in the news. This project will be divided into two parts.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "nodemon": "3.0.3"
+  },
+  "scripts": {
+    "start": "cd scraper && nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
