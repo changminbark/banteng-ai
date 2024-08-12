@@ -2,6 +2,8 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
+from app.routes import home_routes, news_routes
+
 db = SQLAlchemy()
 
 def create_app(config_filename):
@@ -11,6 +13,7 @@ def create_app(config_filename):
 
     with app.app_context():
         from .routes import news_routes
+        app.register_blueprint(home_routes.bp)
         app.register_blueprint(news_routes.bp)
     # Look into connecting to PostgreSQL database (maybe using SQLAlchemy)
 

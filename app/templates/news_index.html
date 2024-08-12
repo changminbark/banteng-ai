@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company News Fetcher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='news_styles.css') }}">
+</head>
+<body>
+    <h1>Company News Fetcher</h1>
+    <form method="POST" action="/news/retrieve">
+        <input type="text" name="company" placeholder="Enter company name" required>
+        <input type="submit" value="Fetch News">
+    </form>
+
+    {% if articles %}
+    <div class="results">
+        <h2>News Articles:</h2>
+        <ul>
+            {% for article in articles %}
+            <li>
+                <strong>{{ article.title }}</strong><br>
+                <em>Published at: {{ article.published_at }}</em><br>
+                <p>{{ article.content }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</body>
+</html>
