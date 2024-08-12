@@ -1,35 +1,31 @@
 # Company-Sentiment-AI
 
-This is a personal project that (may periodically) scrape and parse data about a certain company from a certain website 
-like Google News and then uses an AI (NLP) or classification model to determine the overall sentiment/portrayal of the 
-company in the news. This project will be divided into two parts.
+This is a personal project that gathers and analyzes news data about specific companies to determine the overall sentiment/portrayal in the media using AI and machine learning models. The project is divided into two main parts: data collection and sentiment analysis.
 
-The first part will be the scraping/parsing component.
+## Project Overview
 
-The second part will be the analysis component.
+### Data Collection (News Fetcher)
 
-## First Part (Scraper/Parser)
+Originally, this project scraped headlines from websites like Google News using Puppeteer and cron jobs. However, due to potential legal concerns related to web scraping, I have transitioned to using the [News API](https://newsapi.org/). The News API allows for a more reliable and compliant way to fetch the latest news headlines about companies of interest.
 
-If the website I am scraping (such as Google News) requires a lot of JavaScript to function, then I will use NodeJS
-and Puppeteer to parse/scrape the site. If the website doesn't require JS, then Beautiful Soup and Pandas.
+### Sentiment Analysis
 
-For the automated function (if I am to implement it), I will use Cron.
-
-NOTE: I might just make both types of scrapers (just for the experience) after finishing the second part (analyzer).
-
-NOTE: Puppeteer Scraper for Google News was inspired by work done by Lewis Donovan (https://github.com/lewisdonovan/google-news-scraper/tree/master)
-
-## Second Part (Analyzer)
-
-I will test whether a classification model (like SVC, KNearestNeighbors, DecisionTree, RandomForest, etc.)or an AI 
-model (like an NLP, Deep Learning Neural Network, etc.).
+The second part of the project focuses on analyzing the collected news data. It uses various AI and machine learning models to classify the sentiment of the news articles. The goal is to determine whether the sentiment is positive, negative, or neutral.
 
 ## Technologies Used
-- npm
-- Node.js
-- Express.js
-- Express Generator (Pug Template Engine)
-- Puppeteer
-- Cron
-- VSCode
-- PyCharm
+
+- **Python (Flask)**: Backend framework for handling API requests and rendering the web application.
+- **News API**: For fetching news articles instead of scraping websites.
+- **Pandas**: For data manipulation and analysis.
+- **NLP Libraries**: Natural language processing tools for sentiment analysis.
+- **scikit-learn**: For implementing machine learning models such as SVC, KNearestNeighbors, DecisionTree, and RandomForest.
+- **VSCode**: Code editor.
+- **PyCharm**: Python IDE.
+
+## Future Work
+
+- Experiment with different machine learning models and compare their performance.
+- Potentially re-implement scraping with proper legal compliance for more advanced data gathering (if necessary).
+- Expand the project to analyze sentiment over time and visualize trends.
+
+This project aims to provide insights into how companies are portrayed in the media, leveraging AI to help make sense of large amounts of unstructured data.
