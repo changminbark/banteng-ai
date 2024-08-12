@@ -1,4 +1,4 @@
-# Company-Sentiment-AI
+# Banteng-AI (Company-Sentiment-AI)
 
 This is a personal project that gathers and analyzes news data about specific companies to determine the overall sentiment/portrayal in the media using AI and machine learning models. The project is divided into two main parts: data collection and sentiment analysis.
 
