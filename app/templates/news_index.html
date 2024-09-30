@@ -20,7 +20,8 @@
             {% for article in articles %}
             <li>
                 <strong>{{ article.title }}</strong><br>
-                <em>Published at: {{ article.published_at }}</em><br>
+                <em>Published at: {{ article.publishedAt }}</em><br>
+                <p>{{ article.description }}</p>
                 <p>{{ article.content }}</p>
             </li>
             {% endfor %}

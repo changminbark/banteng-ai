@@ -1,4 +1,5 @@
 from flask import Blueprint, request, render_template
+import pandas as pd
 import requests
 
 from app.services.news_service import fetch_news
@@ -13,6 +14,15 @@ def news_home():
 
 @bp.route('/retrieve', methods=['POST'])
 def get_news():
-    query = request.form.get('company', 'Apple')
+    query = request.form.get('company', default='Apple')
     news = fetch_news(query)
+    # TODO: Clean, parse, and remove unnecessary data to be fed into ML model
+    df = pd.DataFrame(news)
+
+    for article in news:
+        print(article["title"])
+        print(article["description"])
+        print(article["content"])
+        print()
+
     return render_template('news_index.html', articles=news)
