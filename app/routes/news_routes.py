@@ -18,11 +18,20 @@ def get_news():
     news = fetch_news(query)
     # TODO: Clean, parse, and remove unnecessary data to be fed into ML model
     df = pd.DataFrame(news)
+    df = df[['title', 'description', 'content']]
 
-    for article in news:
-        print(article["title"])
-        print(article["description"])
-        print(article["content"])
-        print()
+    mask = (df['title'] == '[Removed]') & (df['description'] == '[Removed]') & (df['content'] == '[Removed]')
+
+    df_filtered = df[~mask]
+
+    print(news)
+    print(df)
+    print(df_filtered)
+
+    # for article in news:
+    #     print(article["title"])
+    #     print(article["description"])
+    #     print(article["content"])
+    #     print()
 
     return render_template('news_index.html', articles=news)

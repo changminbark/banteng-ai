@@ -5,7 +5,7 @@ from flask import current_app
 
 def fetch_news(query):
     search_query = "+" + query + "%20Company"
-    print(search_query)
+    # print(search_query)
     api_key = current_app.config['API_KEY']
     today = DT.date.today()
     week_ago = today - DT.timedelta(days=7)
